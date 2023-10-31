@@ -27,3 +27,44 @@ body {
 h1{
     text-transform: uppercase;
 }
+
+.espejo{
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.24);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15.9px);
+    -webkit-backdrop-filter: blur(15.9px);
+    border: 1px solid rgba(255, 255, 255, 0.75);
+}
+
+ul{
+  list-style-type: '🕷️';
+}
+
+#contenedorBoton{
+  border: solid white 2px;
+  border-radius: 20px;
+  background-color: rgb(173, 115, 7);
+  width: 25%;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#contenedorBoton:hover {
+  background-color: orange;
+  border: solid rgb(92, 6, 150);
+}
+
+a{
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 2rem;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
