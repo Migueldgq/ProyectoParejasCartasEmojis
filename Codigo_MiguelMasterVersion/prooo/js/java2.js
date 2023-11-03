@@ -1,4 +1,4 @@
-'use strict'
+"use strict";
 
 var audio = document.querySelector("#MiAudio");
-  audio.volume = 0.08;
+audio.volume = 0.05;

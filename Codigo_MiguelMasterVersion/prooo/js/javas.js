@@ -1,10 +1,10 @@
 const emojis = ["🎃", "👻", "🦇", "👿", "🍭", "🧟", "💀 ", "🕸️"];
 let cards = [...emojis, ...emojis];
 let attempts = 0;
+let win = 0;
+let seconds = 121;
 let ArrayCards = [];
 let ArrayEmojis = [];
-
-let win = 0;
 
 let audio = document.getElementById("audio");
 
@@ -72,7 +72,6 @@ createBoard();
 
 gameBoard.addEventListener("click", (e) => {
   let value = e.target.classList.contains("front");
-  audio.play()
   if (value) {
     const currentCard = e.target.parentElement;
     let emoji = currentCard.children[1].innerHTML;
@@ -81,14 +80,15 @@ gameBoard.addEventListener("click", (e) => {
     ArrayEmojis = [...ArrayEmojis, emoji];
 
     console.log(ArrayEmojis);
-    console.log(ArrayCards);
+    //console.log(ArrayCards);
 
     matchCardsVerification();
   }
 });
 
 const matchCardsVerification = () => {
-  if (ArrayCards.length > 1) {
+  audio.play();
+  if (ArrayCards.length < 3 && ArrayCards.length === 2) {
     if (ArrayEmojis[0] === ArrayEmojis[1]) {
       ArrayCards = [];
       ArrayEmojis = [];
@@ -110,10 +110,32 @@ const matchCardsVerification = () => {
 
   document.getElementById("fin").innerText = ` Aciertos: ${win}`;
   if (win === emojis.length) {
-    document.getElementById(
-      "fin"
-    ).innerText = `¡Juego completado! Aciertos: ${win}`;
+    document.getElementById("fin").innerText = `¡Juego completado!`;
     setTimeout(resetGame, 3000);
   }
 };
 
+// const timer = () => {
+//   let tiempo = document.getElementById("timer");
+
+//   setInterval(function () {
+//     seconds--;
+//     tiempo.textContent = `Tiempo: ${seconds}`;
+//   }, 1000);
+// };
+
+gameBoard.addEventListener(
+  "click",
+  function () {
+    let tiempo = document.getElementById("timer");
+
+    setInterval((a) => {
+      seconds--;
+      tiempo.textContent = `Tiempo: ${seconds}`;
+    }, 1000);
+    if (win === 8) {
+      clearInterval(a);
+    }
+  },
+  { once: true }
+);

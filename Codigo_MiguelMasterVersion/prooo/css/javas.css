@@ -7,7 +7,7 @@
 }
 @font-face {
   font-family: "frightMaiden";
-  src: url(/fonts/fright_maiden/Fright\ Maiden\ Demo.ttf);
+  src: url(/ProyectoParejasCartasEmojis/Codigo_MiguelMasterVersion/prooo/fonts/fright_maiden/Fright\ Maiden\ Demo.ttf);
 }
 
 h1 {
@@ -41,7 +41,7 @@ body {
       rgba(79, 6, 143, 0.492),
       rgba(5, 5, 5, 0.492)
     ),
-    url("/img/imagenBackground.png");
+    url("/ProyectoParejasCartasEmojis/Codigo_MiguelMasterVersion/prooo/img/imagenBackground.png");
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
@@ -61,7 +61,8 @@ body {
 }
 
 #attempts,
-#fin {
+#fin,
+#timer {
   font-size: 1.5rem;
   font-family: frightMaiden;
 }
