@@ -1,0 +1,149 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+@font-face {
+  font-family: "frightMaiden";
+  src: url(/fonts/fright_maiden/Fright\ Maiden\ Demo.ttf);
+}
+
+h1 {
+  font-family: frightMaiden;
+  font-size: 3rem;
+  text-shadow: 8px 8px 18px rgb(34, 32, 32);
+  text-align: center;
+}
+#audio {
+  display: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.titles {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  color: white;
+  background-image: linear-gradient(
+      rgba(26, 240, 11, 0.492),
+      rgba(79, 6, 143, 0.492),
+      rgba(5, 5, 5, 0.492)
+    ),
+    url("/img/imagenBackground.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container_play {
+  width: 440px;
+  height: 440px;
+  perspective: 1000px; /* Añadido para perspectiva 3D */
+}
+
+#gameBoard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 10px;
+}
+
+#attempts,
+#fin {
+  font-size: 1.5rem;
+  font-family: frightMaiden;
+}
+
+button {
+  border: solid white 2px;
+  border-radius: 1.2rem;
+  background-color: rgb(173, 115, 7);
+  padding: 3px 15px;
+  margin: 10px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+button:hover {
+  background-color: orange;
+  border: solid rgb(92, 6, 150);
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.container_play {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.scoretable {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 15px;
+}
+
+.card {
+  width: 100px;
+  height: 100px;
+  perspective: 200px;
+}
+
+.content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.front,
+.back {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #26173f;
+  border: inset 3px #8aa538;
+  display: grid;
+  place-content: center;
+  font-size: 5rem;
+  border-radius: 1rem;
+  backface-visibility: hidden;
+  user-select: none;
+}
+
+.back {
+  background: linear-gradient(rgb(145, 89, 6), rgb(146, 59, 1));
+  transform: rotateY(180deg);
+}
+
+.flipped {
+  transform: rotateY(180deg);
+  transition: transform 0.3s;
+}
+
+/* Start https://www.cursors-4u.com */
+* {
+  cursor: url(https://cur.cursors-4u.net/holidays/hol-1/hol66.ani),
+    url(https://cur.cursors-4u.net/holidays/hol-1/hol66.png), auto !important;
+} /* End https://www.cursors-4u.com */
