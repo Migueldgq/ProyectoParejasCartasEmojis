@@ -7,7 +7,7 @@
 
 @font-face {
   font-family: "Creepster";
-  src: url(/ProyectoParejasCartasEmojis/Codigo_MiguelMasterVersion/prooo/fonts/Creepster/Creepster-Regular.ttf);
+  src: url(../fonts/Creepster/Creepster-Regular.ttf);
   font-style: normal;
   font-weight: 1000;
 }
@@ -21,7 +21,7 @@
       rgba(79, 6, 143, 0.492),
       rgba(5, 5, 5, 0.492)
     ),
-    url("/ProyectoParejasCartasEmojis/Codigo_MiguelMasterVersion/prooo/img/imagenBackground.png");
+    url("../img/imagenBackground.png");
   opacity: 0.7;
   background-size: cover;
   background-repeat: no-repeat;
