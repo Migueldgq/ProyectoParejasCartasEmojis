@@ -1,44 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Juego Par de Cartas</title>
-    <link rel="stylesheet" href="./css/javas.css" />
+    <title>Inicio</title>
+    <link rel="stylesheet" href="./css/index.css" />
     <link href="./img/icon.png" rel="icon" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Audiowide"
-    />
   </head>
   <body>
-    <canvas id="confetti"></canvas>
-    <button>
-      <a href="./portada.html"> ⬅ </a>
-    </button>
-    <div class="container">
-      <div class="titles">
-        <h1>Juego de Memoria</h1>
-        <div class="scoretable">
-          <div id="attempts">Intentos: 0</div>
-          <div id="fin">Aciertos: 0</div>
-          <div id="timer">Tiempo: 0</div>
-        </div>
-      </div>
-      <div class="container_play">
-        <div id="gameBoard"></div>
-        <!-- //  <audio id="audio" src="sonido.mp3"></audio> -->
-      </div>
+    <audio id="MiAudio" autoplay>
+      <source src="./audios/elden.mp3" type="audio/mp3" />
+    </audio>
+    <video autoplay loop muted preload id="video">
+      <source src="./video/humo.mp4" type="video/mp4" />
+    </video>
+
+    <div class="contenido">
+      <header><h1>Juego de memoria</h1></header>
+      <main>
+        <section class="espejo">
+          <h2>Instrucciones:</h2>
+          <ul>
+            <li>
+              Selecciona dos cartas iguales y encuentra las 8 combinaciones.
+            </li>
+            <li>
+              Las combinaciones acertadas se mantendrán hasta finalizar partida.
+            </li>
+            <li>
+              Trata de resolver el juego con el menor número de intentos
+            </li>
+            <li>Disfruta del juego y sobrevive al Bootcamp!!</li>
+          </ul>
+        </section>
+      </main>
+
       <div id="contenedorBoton">
-        <a href="./index.html">Jugar de nuevo</a>
+        <a href="./game.html">Jugar</a>
       </div>
     </div>
-
-    <audio id="audio">
-      <source type="audio/mp3" src="img/son.mp3" />
-    </audio>
-
-    <!-- <script src="./js2.js"></script> -->
-    <script src="./js/javas.js"></script>
+    <script src="./js/index.js"></script>
   </body>
 </html>

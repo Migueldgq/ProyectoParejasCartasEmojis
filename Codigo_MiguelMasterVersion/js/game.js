@@ -1,10 +1,11 @@
-const emojis = ["🎃", "👻", "🦇", "👿", "🍭", "🧟", "💀 ", "🕸️"];
+const emojis = ["🎃", "👻", "🦇", "👿", "🪦", "🧟", "💀 ", "🕸️"];
 let cards = [...emojis, ...emojis];
-let attempts = 0;
-let win = 0;
-let seconds = 121;
 let ArrayCards = [];
 let ArrayEmojis = [];
+let attempts = 0;
+let win = 0;
+let cardsFlipped = 0;
+let canFlip = true;
 
 let audio = document.getElementById("audio");
 
@@ -32,13 +33,7 @@ function createBoard() {
     const cardBack = document.createElement("div");
     cardBack.classList.add("back");
 
-    // const cards3 = cards[Math.floor(Math.random() * emojis.length)];
-
-    // console.log(cards3);
-
     cardBack.innerHTML = cards[i];
-
-    //console.log(cardBack.innerHTML);
 
     cardSection.appendChild(cardContent);
     cardContent.appendChild(cardFront);
@@ -50,57 +45,42 @@ function createBoard() {
 
 createBoard();
 
-// /* try1 */
-
-// const cards2 = document.querySelectorAll(".card");
-
-// const reveal = (e) => {
-//   const currentCard = e.currentTarget;
-//   currentCard.classList.add("flipped");
-//   const iconito = currentCard.querySelector(".back").innerHTML;
-
-//   console.log(iconito);
-
-//   setTimeout(() => {
-//     currentCard.classList.remove("flipped");
-//   }, 1000);
-// };
-
-// for (const card of cards2) {
-//   card.addEventListener("click", reveal);
-// }
-
 gameBoard.addEventListener("click", (e) => {
+  if (!canFlip) {
+    return; // Si no se pueden voltear cartas, sale del evento de clic
+  }
+
   let value = e.target.classList.contains("front");
-  if (value) {
+  if (value && cardsFlipped < 2) {
+    // Verifica si no se han levantado ya dos cartas
     const currentCard = e.target.parentElement;
     let emoji = currentCard.children[1].innerHTML;
     currentCard.classList.add("flipped");
     ArrayCards = [...ArrayCards, currentCard];
     ArrayEmojis = [...ArrayEmojis, emoji];
-
-    console.log(ArrayEmojis);
-    //console.log(ArrayCards);
-
+    cardsFlipped++; // Incrementa el contador de cartas levantadas
     matchCardsVerification();
   }
 });
 
 const matchCardsVerification = () => {
   audio.play();
-  if (ArrayCards.length < 3 && ArrayCards.length === 2) {
+  if (ArrayCards.length === 2) {
     if (ArrayEmojis[0] === ArrayEmojis[1]) {
       ArrayCards = [];
       ArrayEmojis = [];
       win++;
     } else {
+      canFlip = false; // Desactiva los eventos de clic mientras se hacen las comprobaciones
       setTimeout(() => {
         ArrayCards[0].classList.remove("flipped");
         ArrayCards[1].classList.remove("flipped");
         ArrayCards = [];
         ArrayEmojis = [];
-      }, 300);
+        canFlip = true; // Vuelve a activar los eventos de clic después de volver a ocultar las cartas
+      }, 800);
     }
+    cardsFlipped = 0; // Reinicia el contador de cartas levantadas
   }
 
   if (ArrayCards.length === 2) {
@@ -110,32 +90,10 @@ const matchCardsVerification = () => {
 
   document.getElementById("fin").innerText = ` Aciertos: ${win}`;
   if (win === emojis.length) {
-    document.getElementById("fin").innerText = `¡Juego completado!`;
-    setTimeout(resetGame, 3000);
+    document.getElementById(
+      "fin"
+    ).innerText = `¡Juego completado! en ${attempts} intentos`;
+    document.getElementById("attempts").innerText = "";
+    document.getElementById("contenedorBoton").style.display = "flex";
   }
 };
-
-// const timer = () => {
-//   let tiempo = document.getElementById("timer");
-
-//   setInterval(function () {
-//     seconds--;
-//     tiempo.textContent = `Tiempo: ${seconds}`;
-//   }, 1000);
-// };
-
-gameBoard.addEventListener(
-  "click",
-  function () {
-    let tiempo = document.getElementById("timer");
-
-    setInterval((a) => {
-      seconds--;
-      tiempo.textContent = `Tiempo: ${seconds}`;
-    }, 1000);
-    if (win === 8) {
-      clearInterval(a);
-    }
-  },
-  { once: true }
-);
