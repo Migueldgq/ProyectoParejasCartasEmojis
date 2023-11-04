@@ -1,4 +1,4 @@
-const emojis = ["🎃", "👻", "🦇", "👿", "🪦", "🧟", "💀 ", "🕸️"];
+const emojis = ["🎃", "👻", "🦇", "👿", "🧛‍♀️", "🧟", "💀 ", "🕸️"];
 let cards = [...emojis, ...emojis];
 let ArrayCards = [];
 let ArrayEmojis = [];
@@ -78,7 +78,7 @@ const matchCardsVerification = () => {
         ArrayCards = [];
         ArrayEmojis = [];
         canFlip = true; // Vuelve a activar los eventos de clic después de volver a ocultar las cartas
-      }, 800);
+      }, 350);
     }
     cardsFlipped = 0; // Reinicia el contador de cartas levantadas
   }
@@ -90,10 +90,15 @@ const matchCardsVerification = () => {
 
   document.getElementById("fin").innerText = ` Aciertos: ${win}`;
   if (win === emojis.length) {
+    audioAplausos.play();
+    // document.getElementById(
+    //   "fin"
+    // ).innerText = `🎉🎉🎉🎉¡Juego completado! en ${attempts} intentos🎉🎉🎉🎉`;
     document.getElementById(
-      "fin"
-    ).innerText = `¡Juego completado! en ${attempts} intentos`;
+      "animationEnd"
+    ).innerText = `🎉¡Juego completado! en ${attempts} intentos🎉`;
     document.getElementById("attempts").innerText = "";
+    document.getElementById("fin").innerText = "";
     document.getElementById("contenedorBoton").style.display = "flex";
   }
 };
