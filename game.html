@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juego de Memoria</title>
+    <link rel="stylesheet" href="./css/game.css" />
+    <link href="./img/icon.png" rel="icon" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Audiowide"
+    />
+  </head>
+  <body>
+    <canvas id="confetti"></canvas>
+    <button>
+      <a href="./index.html"> ⬅ </a>
+    </button>
+    <div class="container">
+      <div class="titles">
+        <h1>Suerte!</h1>
+        <div class="scoretable">
+          <div id="attempts">Intentos: 0</div>
+          <div id="fin">Aciertos: 0</div>
+        </div>
+      </div>
+      <div class="container_play">
+        <div id="gameBoard"></div>
+      </div>
+      <div id="contenedorBoton">
+        <a href="./game.html">Jugar de nuevo</a>
+      </div>
+    </div>
+
+    <audio id="audio">
+      <source type="audio/mp3" src="./audios/son.mp3" />
+    </audio>
+
+    <script src="./js/game.js"></script>
+  </body>
+</html>

@@ -1,0 +1,152 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "Creepster";
+  src: url(../fonts/Creepster/Creepster-Regular.ttf);
+  font-style: normal;
+  font-weight: 1000;
+}
+
+.contenido {
+  width: 100%;
+  height: 100vh;
+  color: white;
+  background-image: linear-gradient(
+      rgba(26, 240, 11, 0.492),
+      rgba(79, 6, 143, 0.492),
+      rgba(5, 5, 5, 0.492)
+    ),
+    url("../img/imagenBackground.png");
+  opacity: 0.7;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 1;
+  position: relative;
+}
+
+h1 {
+  color: rgb(255, 94, 0);
+  border: solid;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: Creepster;
+  font-size: 3rem;
+  margin: 20px;
+  padding: 20px;
+  background: rgba(19, 0, 0, 0.24);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(255, 94, 0, 0.384);
+  backdrop-filter: blur(15.9px);
+  -webkit-backdrop-filter: blur(15.9px);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+}
+
+.espejo {
+  padding: 60px;
+  margin: 20px;
+  background: rgba(19, 0, 0, 0.24);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(252, 92, 0, 0.1);
+  backdrop-filter: blur(15.9px);
+  -webkit-backdrop-filter: blur(15.9px);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+}
+
+ul {
+  list-style-type: "🕷️";
+}
+
+#contenedorBoton {
+  border: solid white 2px;
+  border-radius: 20px;
+  background-color: rgb(173, 115, 7);
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+#contenedorBoton:hover {
+  background-color: orange;
+  border: solid rgb(92, 6, 150);
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 2rem;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+#video {
+  opacity: 0.8;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+#audio {
+  display: none;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  #video {
+    width: 100%;
+    height: auto;
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  #video {
+    width: auto;
+    height: 100%;
+  }
+}
+
+@media (max-width: 479px) {
+  .contenido {
+    width: 100%;
+    height: 100vh;
+    color: white;
+    background-image: linear-gradient(
+        rgba(26, 240, 11, 0.492),
+        rgba(79, 6, 143, 0.492),
+        rgba(5, 5, 5, 0.492)
+      ),
+      url(../img/imagenBackground.png);
+    opacity: 1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 1;
+    position: relative;
+  }
+
+  #video {
+    display: none;
+  }
+}
+
+/* Start https://www.cursors-4u.com */
+* {
+  cursor: url(https://cur.cursors-4u.net/holidays/hol-1/hol66.ani),
+    url(https://cur.cursors-4u.net/holidays/hol-1/hol66.png), auto !important;
+} /* End https://www.cursors-4u.com */
