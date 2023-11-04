@@ -68,11 +68,32 @@ body {
   gap: 10px;
 }
 
-#attempts,
-#fin,
-#timer {
+#fails,
+#fin {
   font-size: 1.5rem;
   font-family: frightMaiden;
+}
+
+#animationEnd {
+  position: fixed;
+  animation: animationEnd 1s infinite;
+  transform-origin: center;
+  font-size: 1.5rem;
+  font-family: frightMaiden;
+}
+
+@keyframes animationEnd {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 button {
@@ -218,6 +239,39 @@ a {
     border-radius: 0.5rem;
     backface-visibility: hidden;
     user-select: none;
+  }
+  
+  #animationEnd {
+    text-align: center;
+    position: fixed;
+    animation: animationEnd 1s infinite;
+    transform-origin: center;
+    font-size: 0.9rem;
+    font-family: frightMaiden;
+  }
+}
+
+@media (max-height: 730px) {
+  body {
+    width: 100%;
+    height: 100vh;
+    color: white;
+    background-image: linear-gradient(
+        rgba(26, 240, 11, 0.492),
+        rgba(79, 6, 143, 0.492),
+        rgba(5, 5, 5, 0.492)
+      ),
+      url(../img/imagenBackground.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  #confetti {
+    display: none;
   }
 }
 
