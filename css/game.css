@@ -68,7 +68,7 @@ body {
   gap: 10px;
 }
 
-#attempts,
+#fails,
 #fin {
   font-size: 1.5rem;
   font-family: frightMaiden;
@@ -88,7 +88,7 @@ body {
   }
 
   50% {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
 
   100% {
@@ -239,6 +239,15 @@ a {
     border-radius: 0.5rem;
     backface-visibility: hidden;
     user-select: none;
+  }
+  
+  #animationEnd {
+    text-align: center;
+    position: fixed;
+    animation: animationEnd 1s infinite;
+    transform-origin: center;
+    font-size: 0.9rem;
+    font-family: frightMaiden;
   }
 }
 
