@@ -81,7 +81,7 @@ body {
   font-size: 1.5rem;
   font-family: frightMaiden;
 }
-.back{
+.back {
   font-size: 8rem;
 }
 @keyframes animationEnd {
@@ -182,8 +182,8 @@ a {
 .back {
   background: linear-gradient(rgb(145, 89, 6), rgb(146, 59, 1));
   transform: rotateY(180deg);
-    font-size: 5rem;
-  }
+  font-size: 5rem;
+}
 
 .flipped {
   transform: rotateY(180deg);
@@ -212,10 +212,8 @@ a {
   }
 
   .card {
-  
     width: 75px;
     height: 75px;
-    
   }
 
   #gameBoard {
@@ -223,13 +221,11 @@ a {
     grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
     gap: 10px;
     justify-items: center;
-    
-   
   }
 
   .container_play {
     width: 370px;
-    height: 170px;
+    height: 330px;
     perspective: 1000px;
     font-size: 2rem;
   }
@@ -248,7 +244,7 @@ a {
     backface-visibility: hidden;
     user-select: none;
   }
-  
+
   #animationEnd {
     text-align: center;
     position: fixed;
